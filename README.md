@@ -1,27 +1,13 @@
-# TheRickandMorty
+# Proyecto: Rick and Morty API Buscador de Personajes
+## Descripción
+Este código forma parte de un proyecto que utiliza la API de Rick and Morty para buscar personajes. La función principal aquí es realizar una solicitud a la API en función de un valor de texto proporcionado (TextValue). El código maneja la cancelación de solicitudes anteriores para evitar la ejecución simultánea de múltiples solicitudes.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.1.
+## Detalles del Código
+### Método cancelPreviousRequest()
+Este método se encarga de cancelar solicitudes de búsqueda anteriores. Verifica si hay un controlador de aborto (AbortController) existente y, en caso afirmativo, aborta la solicitud actual y establece el controlador en null.
 
-## Development server
+### Método getApiList(TextValue: string): Promise<any>
+Este método realiza una solicitud a la API de Rick and Morty para buscar personajes cuyos nombres coincidan con el valor de texto proporcionado. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Uso
+Este código puede ser parte de un servicio o componente que realiza búsquedas de personajes en la API de Rick and Morty. Al llamar al método getApiList, se inicia una nueva solicitud, y cualquier solicitud en curso se cancela para evitar resultados inconsistentes.
