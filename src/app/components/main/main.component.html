@@ -1,0 +1,10 @@
+<app-seeker (payload)="getEmitPayload($event)"></app-seeker>
+
+<p>Resultados de la busqueda:</p>
+
+<ul *ngFor="let pay of payload">
+    <li>
+        <img width="40px" src="{{pay.image}}" alt="imagen"> 
+        {{pay.name}}
+    </li>
+</ul>
